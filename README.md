@@ -28,13 +28,10 @@ ___
 4. Go to the **NEXT** section
 
 ## Starting the Project
-1. Open the `package.json` file and change the `name` property to the name of your application, and `author` to  your name.
+1. Open the `package.json` file and change the `name` property to the name of your application.
 1. Rename the `.sample.env` file to `.env` file. The final file name should be `.env`
 1. From your command line, be in the root directory and run `npm install` OR `npm i` for short.
 1. To start your application, run `npm start`
-
-### If you see this, you are set to go!
-![LIT](./documentation/lit-screen.png)
 
 **NOTES:** 
 - Changes you make to the project will make the browser reload on save...no more hard refresh unless something goes wrong.
