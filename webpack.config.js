@@ -64,6 +64,7 @@ module.exports = {
   },
   // Opens browser on run of npm start 
   devServer: {
-    open: true
+    open: true,
+    // allowedHosts: "all" // remove when not using on Gitpod
   }
 };
