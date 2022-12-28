@@ -8,7 +8,7 @@ const startApp = () => {
 };
 
 const students = [];
-const voldysArmy = [];
+const voldysArmy; // starts as an empty array
 
 
 const events = () => {
@@ -41,12 +41,12 @@ const events = () => {
     if (e.target.id.includes('filter')) {
       const [, house] = e.target.id.split('--');
 
-      if (house === 'all') {
-        studentsOnDom('#students', students);
-      } else if (house) {
-        const filter = students.filter((student) => student.house === house);
-        studentsOnDom('#students', filter, house);
-      }
+        if (house === 'all') {
+          studentsOnDom('#students', students);
+        } else if (house) {
+          const filter = students.filter((student) => student.house === house);
+          studentsOnDom('#students', filter, house);
+        }
     }
   });
 };
@@ -54,14 +54,14 @@ const events = () => {
 // ********** HTML Components  ********** //
 // the basic HMTL structure of app
 const htmlStructure = () => {
-  const domString = `
-  <div id="header-container" class="header mb-3"></div>
-  <div id="form-container" class="container mb-3 text-center"></div>
-  <div id="filter-container" class="container mb-3"></div>
-  <div id="student-container" class="container d-flex"></div>
-  `;
+    const domString = `
+    <div id="header-container" class="header mb-3"></div>
+    <div id="form-container" class="container mb-3 text-center"></div>
+    <div id="filter-container" class="container mb-3"></div>
+    <div id="student-container" class="container d-flex"></div>
+    `;
 
-  renderToDOM('#app', domString);
+  renderToDOM('#app', domString)
 };
 
 const header = () => {
@@ -85,15 +85,15 @@ const startSortingBtn = () => {
 
 const studentAreas = () => {
   const domString = `<div id="students">No Students</div>
-  <div id="voldy">No Death Eaters</div>`;
+  <div id="voldy">No Death Eaters</div>`
 
   renderToDOM('#student-container', domString);
 };
 
 const studentsOnDom = (divId, array, house = 'Hogwarts') => {
   let domString = '';
-  if (!array.length) {
-    domString += `NO ${house.toUpperCase()} STUDENTS`;
+  if(!array.length){
+    domString += `NO ${house.toUpperCase()} STUDENTS`
   }
 
   array.forEach((student) => {
